@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Poppins:wght@500&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+$colorPrimary: #151b32;
+
+%textNav {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: normal;
+    color: $colorPrimary;
+}
+
+body {
+    @extend %textNav;
+    background: #fff;
+    padding: 100px;
+    border-radius: 16px;
+
+    .app {
+        // Header
+        header {
+            .title {
+                a {
+                    font-family: "Merriweather", serif;
+                    font-size: 32px;
+                    font-weight: 900;
+                    color: $colorPrimary;
+                    text-decoration: none;
+                }
+            }
+            .header {
+                margin-top: 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                // Search
+                .search {
+                    display: flex;
+                    min-width: 327px;
+                    max-height: 66px;
+                    padding: 16px;
+                    border-radius: 4px;
+                    border: 1px solid var(--bfc-8-e-6, #bfc8e5);
+
+                    .search_btn {
+                        border: none;
+                        background: #fff;
+                        cursor: pointer;
+                        font-size: 32px;
+                        margin-left: 8px;
+                        color: #453f3f;
+                    }
+
+                    .search_input {
+                        border: none;
+                    }
+
+                    .search_input::placeholder {
+                        font-family: "Poppins", sans-serif;
+                        font-size: 16px;
+                        font-weight: 500;
+                        opacity: 0.7;
+                    }
+                }
+
+                // Navigation
+                .nav {
+                    .nav_list {
+                        display: flex;
+
+                        .item {
+                            padding: 16px;
+
+                            a {
+                                @extend %textNav;
+                                text-decoration: none;
+                            }
+                        }
+
+                        .item:hover {
+                            border-radius: 8px;
+                            background: #849fff;
+                            a {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Main
+        main {
+            margin-top: 70px;
+
+            // Users
+            .users {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+
+                .user {
+                    padding: 24px;
+                    border-radius: 16px;
+                    background: #fbfcff;
+                    display: flex;
+                    gap: 16px;
+
+                    .user_img {
+                        width: 97px;
+                        height: 97px;
+                    }
+
+                    .user-info {
+                        display: flex;
+                        flex-direction: column;
+                        padding-top: 20px;
+
+                        .name {
+                            font-family: "Merriweather", serif;
+                            font-size: 18px;
+                            font-weight: 900;
+                            cursor: pointer;
+                        }
+
+                        .desc {
+                            margin-top: 4px;
+                            font-size: 14px;
+                            cursor: pointer;
+                        }
+
+                        .details {
+                            margin-top: 16px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+
+                            .detail {
+                                padding: 2px 8px;
+                                border-radius: 10px;
+                                border: 1px solid var(--bfc-8-e-6, #bfc8e5);
+                                background: #fff;
+                                color: #516fd4;
+                                font-size: 12px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                .user:hover {
+                    border: 1px solid #bfc8e5;
+                    background: #fbfcff;
+                    box-shadow: 0px 8px 23px 0px rgba(218, 224, 249, 0.7);
+                }
+            }
+        }
+    }
+}
